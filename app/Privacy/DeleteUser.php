@@ -34,39 +34,63 @@ final class DeleteUser implements SubjectDeleter
         // inferred by static analysis, confirm this key before relying on it
         Cache::forget("user:{$subjectId}");
 
-        \App\Models\AuditEntry::query()
-            ->where('actor_id', $subjectId)
-            ->update([
-                'actor_id' => null,
-            ]);
+        // Terminates because actor_id is among the columns being nulled,
+        // so the next pass matches nothing. Keep it that way if you edit this.
+        do {
+            $affected = \App\Models\AuditEntry::query()
+                ->where('actor_id', $subjectId)
+                ->limit(1000)
+                ->update([
+                    'actor_id' => null,
+                ]);
+        } while ($affected > 0);
 
-        \App\Models\Comment::query()
-            ->where('user_id', $subjectId)
-            ->update([
-                'author_ip' => null,
-                'user_id' => null,
-            ]);
+        // Terminates because user_id is among the columns being nulled,
+        // so the next pass matches nothing. Keep it that way if you edit this.
+        do {
+            $affected = \App\Models\Comment::query()
+                ->where('user_id', $subjectId)
+                ->limit(1000)
+                ->update([
+                    'author_ip' => null,
+                    'user_id' => null,
+                ]);
+        } while ($affected > 0);
 
-        DB::table('legacy_profiles')
-            ->where('user_id', $subjectId)
-            ->delete();
+        do {
+            $deleted = DB::table('legacy_profiles')
+                ->where('user_id', $subjectId)
+                ->limit(1000)
+                ->delete();
+        } while ($deleted > 0);
 
-        \App\Models\Order::query()
-            ->where('user_id', $subjectId)
-            ->update([
-                'user_id' => null,
-            ]);
+        // Terminates because user_id is among the columns being nulled,
+        // so the next pass matches nothing. Keep it that way if you edit this.
+        do {
+            $affected = \App\Models\Order::query()
+                ->where('user_id', $subjectId)
+                ->limit(1000)
+                ->update([
+                    'user_id' => null,
+                ]);
+        } while ($affected > 0);
 
         // no foreign key to the subject; supply the lookup yourself
         // TODO: password_reset_tokens (DELETE)
 
-        DB::table('recommendation_events')
-            ->where('user_id', $subjectId)
-            ->delete();
+        do {
+            $deleted = DB::table('recommendation_events')
+                ->where('user_id', $subjectId)
+                ->limit(1000)
+                ->delete();
+        } while ($deleted > 0);
 
-        DB::table('sessions')
-            ->where('user_id', $subjectId)
-            ->delete();
+        do {
+            $deleted = DB::table('sessions')
+                ->where('user_id', $subjectId)
+                ->limit(1000)
+                ->delete();
+        } while ($deleted > 0);
 
         \App\Models\User::query()->whereKey($subjectId)->delete();
 
