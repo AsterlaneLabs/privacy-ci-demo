@@ -20,7 +20,16 @@ final class UserPrivacyPolicy extends PrivacyPolicy
     {
         $this->subject(User::class);
 
-        $this->delete(User::class);
+        // Mask the person out of the row instead of deleting it, so orders and
+        // comments keep pointing somewhere.
+        // Masked to placeholders, not to null: these columns are NOT NULL, and
+        // email is unique, so every erased subject needs a distinct value.
+        $this->anonymize(User::class, [
+            'name' => 'Deleted user',
+            'email' => 'deleted@example.invalid',
+            'password' => '',
+            'remember_token' => '',
+        ]);
         $this->delete('legacy_profiles');
         $this->delete('recommendation_events');
         $this->delete('sessions');

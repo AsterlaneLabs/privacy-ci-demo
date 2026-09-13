@@ -2627,12 +2627,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:AsterlaneLabs/privacy-ci.git",
-                "reference": "50107845369843a70184c2acd57b13bee667c583"
+                "reference": "271e0cd0483649a53652308a5b91e1c968f947a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AsterlaneLabs/privacy-ci/zipball/50107845369843a70184c2acd57b13bee667c583",
-                "reference": "50107845369843a70184c2acd57b13bee667c583",
+                "url": "https://api.github.com/repos/AsterlaneLabs/privacy-ci/zipball/271e0cd0483649a53652308a5b91e1c968f947a8",
+                "reference": "271e0cd0483649a53652308a5b91e1c968f947a8",
                 "shasum": ""
             },
             "require": {
@@ -2683,7 +2683,7 @@
                 "source": "https://github.com/AsterlaneLabs/privacy-ci/tree/main",
                 "issues": "https://github.com/AsterlaneLabs/privacy-ci/issues"
             },
-            "time": "2026-09-13T04:20:50+00:00"
+            "time": "2026-09-13T04:29:35+00:00"
         },
         {
             "name": "psr/clock",

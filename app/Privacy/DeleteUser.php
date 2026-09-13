@@ -92,11 +92,19 @@ final class DeleteUser implements SubjectDeleter
                 ->delete();
         } while ($deleted > 0);
 
-        \App\Models\User::query()->whereKey($subjectId)->delete();
+        \App\Models\User::query()
+            ->where('id', $subjectId)
+            ->update([
+                'email' => 'deleted@example.invalid',
+                'name' => 'Deleted user',
+                'password' => '',
+                'remember_token' => '',
+            ]);
 
         // TODO: these locations have no policy and are therefore untouched.
         // Classify them in your privacy policy and regenerate.
         //   - comments.body
         //   - orders.shipping_address
+        //   - users.id
     }
 }
