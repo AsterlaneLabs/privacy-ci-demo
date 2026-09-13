@@ -2623,16 +2623,16 @@
         },
         {
             "name": "privacy-ci/laravel",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AsterlaneLabs/privacy-ci.git",
-                "reference": "d9a1392a2bf901beaeb109b7401eae9a5ead3539"
+                "reference": "0cc1038fd58740d363a22f4744bd246b70a0a19d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AsterlaneLabs/privacy-ci/zipball/d9a1392a2bf901beaeb109b7401eae9a5ead3539",
-                "reference": "d9a1392a2bf901beaeb109b7401eae9a5ead3539",
+                "url": "https://api.github.com/repos/AsterlaneLabs/privacy-ci/zipball/0cc1038fd58740d363a22f4744bd246b70a0a19d",
+                "reference": "0cc1038fd58740d363a22f4744bd246b70a0a19d",
                 "shasum": ""
             },
             "require": {
@@ -2667,18 +2667,24 @@
                 "MIT"
             ],
             "description": "Find where personal data lives in your Laravel app, classify it in policy-as-code, and fail CI when new user-linked storage has no policy.",
+            "homepage": "https://github.com/AsterlaneLabs/privacy-ci",
             "keywords": [
                 "ci",
+                "compliance",
+                "data-protection",
+                "dsar",
                 "gdpr",
                 "laravel",
+                "personal-data",
+                "php",
                 "privacy",
                 "static-analysis"
             ],
             "support": {
                 "issues": "https://github.com/AsterlaneLabs/privacy-ci/issues",
-                "source": "https://github.com/AsterlaneLabs/privacy-ci/tree/v0.1.0"
+                "source": "https://github.com/AsterlaneLabs/privacy-ci"
             },
-            "time": "2026-09-13T05:09:59+00:00"
+            "time": "2026-09-13T05:28:52+00:00"
         },
         {
             "name": "psr/clock",
