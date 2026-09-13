@@ -4,12 +4,18 @@ A small Laravel application with a deliberately awkward schema, for trying
 [Privacy CI](https://github.com/AsterlaneLabs/privacy-ci) without pointing it at
 anything you care about.
 
+![privacy:discover finding personal data, then privacy:check failing on a new column](docs/privacy-ci.gif)
+
 ```bash
 composer install
 touch database/database.sqlite
 php artisan migrate --force
 php artisan privacy:discover
 ```
+
+The recording above is real output from this application. Regenerate it with
+`.demo/record.sh`, which needs [asciinema](https://asciinema.org) and
+[agg](https://github.com/asciinema/agg).
 
 ## The forty second version
 
