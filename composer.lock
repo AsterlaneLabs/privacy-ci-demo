@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8926a56633ff3400c548e06d9fd99b5",
+    "content-hash": "c264440ea99590e49d5ab8dabc9d95ec",
     "packages": [
         {
             "name": "brick/math",
@@ -2624,10 +2624,16 @@
         {
             "name": "privacy-ci/laravel",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:AsterlaneLabs/privacy-ci.git",
+                "reference": "2f0f18c5ba634e5bdcb5a9837c928042905275ec"
+            },
             "dist": {
-                "type": "path",
-                "url": "../PrivacyGraph",
-                "reference": "9db9bf4b770a2e2f5a8e605ab6718d50a6fb70cf"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AsterlaneLabs/privacy-ci/zipball/2f0f18c5ba634e5bdcb5a9837c928042905275ec",
+                "reference": "2f0f18c5ba634e5bdcb5a9837c928042905275ec",
+                "shasum": ""
             },
             "require": {
                 "illuminate/console": "^12.0|^13.0",
@@ -2640,6 +2646,7 @@
                 "orchestra/testbench": "^10.0|^11.0",
                 "phpunit/phpunit": "^11.0"
             },
+            "default-branch": true,
             "bin": [
                 "bin/privacy-ci"
             ],
@@ -2672,10 +2679,11 @@
                 "privacy",
                 "static-analysis"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/AsterlaneLabs/privacy-ci/tree/main",
+                "issues": "https://github.com/AsterlaneLabs/privacy-ci/issues"
+            },
+            "time": "2026-09-13T03:33:55+00:00"
         },
         {
             "name": "psr/clock",
