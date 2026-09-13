@@ -12,7 +12,7 @@
         "php": "^8.3",
         "laravel/framework": "^13.17",
         "laravel/tinker": "^3.0",
-        "privacy-ci/laravel": "@dev"
+        "privacy-ci/laravel": "^0.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -84,14 +84,8 @@
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
         },
-        "github-protocols": ["https"]
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/AsterlaneLabs/privacy-ci"
-        }
-    ]
+        "github-protocols": [
+            "https"
+        ]
+    }
 }

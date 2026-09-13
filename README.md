@@ -13,6 +13,9 @@ php artisan migrate --force
 php artisan privacy:discover
 ```
 
+The package comes from Packagist as
+[`privacy-ci/laravel`](https://packagist.org/packages/privacy-ci/laravel).
+
 The recording above is real output from this application. Regenerate it with
 `.demo/record.sh`, which needs [asciinema](https://asciinema.org) and
 [agg](https://github.com/asciinema/agg).
